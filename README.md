@@ -66,17 +66,11 @@ python -m unittest
 ## 🧠 Conceitos trabalhados
 - Entrada de dados com `input()`
 - Conversão e validação de `float`
-- Funções puras e testáveis (`calcular_media`, `classificar_media`)
 - Formatação de saída com f-strings
 - Organização de projeto e **README**
 
 ---
 
-## 🚀 Extensões sugeridas
-- Permitir **n** notas (não só 4).
-- Salvar histórico de médias em um arquivo `.csv`.
-
----
 
 ## 📂 Estrutura do projeto
 ```
