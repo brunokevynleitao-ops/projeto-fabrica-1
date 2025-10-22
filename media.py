@@ -1,25 +1,28 @@
-import unittest
-from media import calcular_media, classificar_media
+def calcular_media(n1, n2, n3, n4):
+    return (n1 + n2 + n3 + n4) / 4
 
 
-class TestMedia(unittest.TestCase):
-    def test_classificar_media_aprovado(self):
-        """Verifica a classificação 'Aprovado(a)'."""
-        self.assertEqual(classificar_media(7.0), "Aprovado(a) ✅")
-        self.assertEqual(classificar_media(9.5), "Aprovado(a) ✅")
+def classificar_media(media):
+    if media >= 7:
+        return "Aprovado(a) ✅"
+    elif media >= 5:
+        return "Recuperação ⚠️"
+    else:
+        return "Reprovado(a) ❌"
+    
+nome = input("Digite o nome do aluno: ") 
 
 
-    def test_classificar_media_recuperacao(self):
-        """Verifica a classificação 'Recuperação'."""
-        self.assertEqual(classificar_media(5.0), "Recuperação ⚠️")
-        self.assertEqual(classificar_media(6.9), "Recuperação ⚠️")
+nota1 = float(input("Digite a 1ª nota: "))
+nota2 = float(input("Digite a 2ª nota: "))
+nota3 = float(input("Digite a 3ª nota: "))
+nota4 = float(input("Digite a 4ª nota: "))
 
 
-    def test_classificar_media_reprovado(self):
-        """Verifica a classificação 'Reprovado(a)'."""
-        self.assertEqual(classificar_media(4.99), "Reprovado(a) ❌")
+media = calcular_media(nota1, nota2, nota3, nota4)
+situacao = classificar_media(media)
 
 
-
-if __name__ == '__main__':
-    unittest.main()
+print(f"\nAluno: {nome}")
+print(f"Média: {media:.2f}")
+print(f"Situação: {situacao}")
